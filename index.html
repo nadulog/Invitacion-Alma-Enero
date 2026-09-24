@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#071d20">
+    <meta name="description" content="Invitación a los XV de Alma — 9 de enero de 2027 en La Escondida.">
+    <title>Mis XV — Alma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="assets/invitation-personalization.js" defer></script>
+  </head>
+  <body>
+    <audio id="invitationAudio" loop preload="metadata" playsinline>
+      <source src="assets/musica-alma.mp3" type="audio/mpeg">
+    </audio>
+    <button class="audio-toggle" id="audioToggle" type="button" aria-pressed="false" aria-label="Encender música">
+      <span class="audio-disc" aria-hidden="true"><i></i></span>
+      <span class="audio-label">Música</span>
+    </button>
+
+    <main class="invitation">
+      <section class="visual-panel hero" aria-label="Portada de los XV de Alma">
+        <img src="assets/01-portada.jpg" alt="Luna llena sobre el mar en una noche de fiesta. Mis XV, Alma." width="942" height="1674">
+        <div class="hero-effects" aria-hidden="true">
+          <span class="moon-glow"></span>
+          <span class="water-glint"></span><span class="water-glint"></span><span class="water-glint"></span>
+          <span class="water-glint"></span><span class="water-glint"></span><span class="water-glint"></span>
+        </div>
+        <a class="scroll-cue" href="#cuenta-regresiva" aria-label="Continuar a la cuenta regresiva">
+          <span></span>
+        </a>
+      </section>
+
+      <section class="guest-section" id="invitados" aria-labelledby="guest-title" aria-live="polite" hidden>
+        <div class="guest-stars" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+        <p class="guest-kicker">Una noche para compartir</p>
+        <h2 id="guest-title"><span id="nombres-invitados"></span></h2>
+        <div class="guest-divider" aria-hidden="true"><i></i><span>☾</span><i></i></div>
+        <p class="guest-passes" id="cantidad-lugares"></p>
+        <p class="guest-message">Me haría muy feliz celebrar este momento con ustedes.</p>
+      </section>
+
+      <section class="visual-panel countdown-panel" id="cuenta-regresiva" aria-labelledby="countdown-title">
+        <img src="assets/02-cuenta-regresiva-sin-texto.jpg" alt="Paisaje nocturno entre dunas iluminado por la luna." width="1024" height="1536">
+        <div class="countdown-atmosphere" aria-hidden="true">
+          <span class="mist mist-one"></span><span class="mist mist-two"></span>
+          <span class="night-star"></span><span class="night-star"></span><span class="night-star"></span><span class="night-star"></span>
+          <span class="night-star"></span><span class="night-star"></span><span class="night-star"></span><span class="night-star"></span>
+        </div>
+        <div class="countdown-content">
+          <p class="eyebrow" id="countdown-title">Faltan</p>
+          <div class="countdown" aria-live="polite" aria-atomic="true">
+            <div><strong id="days">00</strong><span>Días</span></div>
+            <div><strong id="hours">00</strong><span>Horas</span></div>
+            <div><strong id="minutes">00</strong><span>Minutos</span></div>
+            <div><strong id="seconds">00</strong><span>Segundos</span></div>
+          </div>
+          <p class="countdown-finished" id="countdownFinished" hidden>¡Llegó la gran noche!</p>
+        </div>
+      </section>
+
+      <section class="visual-panel action-panel date-panel" aria-label="Fecha y hora">
+        <img src="assets/03-fecha.jpg" alt="Sábado 9 de enero de 2027, de 21:00 a 05:00 horas." width="942" height="1674">
+        <a class="image-action date-action" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Mis%20XV%20%E2%80%94%20Alma&amp;dates=20270110T000000Z%2F20270110T080000Z&amp;details=Te%20espero%20para%20celebrar%20mis%20XV.&amp;location=La%20Escondida" target="_blank" rel="noopener" aria-label="Agregar los XV de Alma a Google Calendar">Agregar al calendario</a>
+      </section>
+
+      <section class="visual-panel action-panel location-panel" aria-label="Cómo llegar a La Escondida">
+        <img src="assets/04-como-llegar.jpg" alt="Camino iluminado hacia La Escondida bajo la luna llena." width="942" height="1674">
+        <div class="location-effects" aria-hidden="true">
+          <span class="lantern-glow lantern-glow-left"></span><span class="lantern-glow lantern-glow-right"></span>
+          <span class="firefly"></span><span class="firefly"></span><span class="firefly"></span><span class="firefly"></span><span class="firefly"></span>
+          <span class="firefly"></span><span class="firefly"></span><span class="firefly"></span><span class="firefly"></span><span class="firefly"></span>
+        </div>
+        <a class="image-action location-action" href="https://maps.app.goo.gl/2etzqFMvxmfa4pyh9?g_st=aw" target="_blank" rel="noopener" aria-label="Ver ubicación de La Escondida en Google Maps">Ver ubicación</a>
+      </section>
+
+      <section class="visual-panel" aria-label="Dress code elegante. Evitar color verde.">
+        <img src="assets/05-dress-code.jpg" alt="Dress code elegante. Evitar color verde." width="942" height="1674">
+      </section>
+
+      <section class="visual-panel action-panel bloomkeep-panel" aria-label="Bloomkeep">
+        <img src="assets/06-bloomkeep.jpg" alt="Bloomkeep: compartí tus fotos y mensajes." width="942" height="1674">
+        <a class="image-action bloomkeep-action" href="https://app.bloomkeep.site/almaa-15" target="_blank" rel="noopener" aria-label="Ingresar al álbum Bloomkeep de Alma">Ingresar</a>
+      </section>
+
+      <section class="visual-panel action-panel gift-panel" aria-label="Regalos">
+        <img src="assets/07-regalos.jpg" alt="Regalos. Si deseás hacerme un regalo, consultá los datos de transferencia." width="942" height="1674">
+        <button class="image-action gift-action" id="openGift" type="button" aria-haspopup="dialog" aria-controls="giftModal">Ver datos</button>
+      </section>
+
+      <section class="visual-panel action-panel music-panel" aria-label="Música">
+        <img src="assets/08-musica.jpg" alt="Música. Ayudame a crear la playlist." width="942" height="1674">
+        <div class="music-bubbles" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <a class="image-action music-action" href="https://open.spotify.com/playlist/6MBtYoC77OTIjcWRmCyGNo?si=cJP15Fj0TsuB6YUoTu1uYw&amp;utm_source=whatsapp&amp;pi=E2QE86BVQS-ZT&amp;pt=57bd1ae075f7a87330dbedbf7cfa9282" target="_blank" rel="noopener" aria-label="Sugerir una canción en la playlist de Alma">Sugerir canción</a>
+      </section>
+
+      <section class="visual-panel action-panel rsvp-panel" aria-label="Confirmación de asistencia">
+        <img src="assets/09-confirmacion.jpg" alt="¿Venís? Confirmá tu asistencia antes del 15 de diciembre." width="942" height="1674">
+        <a class="image-action rsvp-action" id="boton-confirmar" href="https://wa.me/541140436324?text=Hola%2C%20quiero%20confirmar%20mi%20asistencia%20a%20los%20XV%20de%20Alma." target="_blank" rel="noopener" aria-label="Confirmar asistencia a los XV de Alma">Confirmar asistencia</a>
+      </section>
+    </main>
+
+    <footer class="footer-panel" aria-label="BloomDate">
+      <img src="assets/10-footer.jpg" alt="Hecho con amor por BloomDate. Todos los derechos reservados." width="2048" height="683">
+      <nav class="social-links" aria-label="Redes de BloomDate">
+        <a class="social-hit social-whatsapp" href="https://wa.me/541140436324" target="_blank" rel="noopener" aria-label="WhatsApp de BloomDate">WhatsApp</a>
+        <a class="social-hit social-instagram" href="https://www.instagram.com/bloomdate.invitaciones/" target="_blank" rel="noopener" aria-label="Instagram de BloomDate">Instagram</a>
+        <a class="social-hit social-web" href="https://bloomdate-site.netlify.app/" target="_blank" rel="noopener" aria-label="Sitio web de BloomDate">Web</a>
+      </nav>
+    </footer>
+
+    <div class="modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftTitle" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-card" role="document">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+        <p class="modal-kicker">Con mucho cariño</p>
+        <h2 id="giftTitle">Datos para transferencia</h2>
+        <div class="bank-detail">
+          <span>Alias</span>
+          <strong id="giftAlias">alma.auce</strong>
+        </div>
+        <div class="bank-detail">
+          <span>Titular</span>
+          <strong>Alma Delfina Auce</strong>
+        </div>
+        <button class="copy-button" id="copyAlias" type="button">Copiar alias</button>
+        <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+      </div>
+    </div>
+  </body>
+</html>

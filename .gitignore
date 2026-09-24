@@ -1,0 +1,10 @@
+# Archivos de vista previa local
+preview-server*
+keep-preview-server.ps1
+*.log
+
+# Archivos internos de Codex
+.agents/
+
+# Fuentes PNG pesadas; el sitio usa las versiones JPG optimizadas
+assets/*.png
