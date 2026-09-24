@@ -128,8 +128,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .guest-section {
   position: relative;
   isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 942 / 1674;
   overflow: hidden;
-  padding: clamp(64px, 12vw, 105px) clamp(24px, 8vw, 70px);
+  padding: clamp(52px, 12vw, 105px) clamp(24px, 8vw, 70px);
   text-align: center;
   color: var(--ivory);
   background:
@@ -167,7 +173,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .guest-stars span:nth-child(2) { font-size: 18px; }
 
 .guest-kicker {
-  margin: 0 0 14px;
+  margin: 0;
   color: #d5c4ae;
   font: 400 clamp(9px, 2.2vw, 13px)/1.5 var(--sans);
   letter-spacing: .28em;
@@ -176,7 +182,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .guest-section h2 {
-  margin: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: clamp(120px, 34vw, 270px);
+  margin: clamp(22px, 6vw, 48px) 0;
   color: #fffaf3;
   font: 400 clamp(38px, 10vw, 72px)/1.05 var(--serif);
   text-shadow: 0 0 28px rgba(240, 207, 155, .16);
@@ -188,7 +198,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   justify-content: center;
   gap: 15px;
   width: min(100%, 310px);
-  margin: 24px auto 18px;
+  margin: 0 auto clamp(22px, 5vw, 38px);
   color: #ddb67c;
   font-size: 22px;
 }
@@ -202,13 +212,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font: 400 clamp(12px, 3vw, 17px)/1.4 var(--sans);
   letter-spacing: .15em;
   text-transform: uppercase;
-}
-
-.guest-message {
-  max-width: 490px;
-  margin: 20px auto 0;
-  color: rgba(245, 237, 226, .76);
-  font: italic 400 clamp(18px, 4.5vw, 27px)/1.35 var(--serif);
 }
 
 .scroll-cue {

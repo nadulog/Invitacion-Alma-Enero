@@ -40,7 +40,7 @@
       var totalPasses = 1 + companions.length;
       var passesEl = document.getElementById("cantidad-lugares");
       if (passesEl) {
-        passesEl.textContent = "Tenés " + totalPasses + (totalPasses === 1 ? " lugar reservado" : " lugares reservados");
+        passesEl.textContent = "Reservamos " + totalPasses + (totalPasses === 1 ? " lugar para vos" : " lugares para vos");
       }
 
       var guestSection = document.getElementById("invitados");
