@@ -56,13 +56,37 @@
 
   if (invitationAudio && audioToggle) {
     invitationAudio.volume = 0.55;
+
+    function removeAutoplayFallback() {
+      document.removeEventListener("pointerdown", startAudioFromFirstInteraction, true);
+      document.removeEventListener("keydown", startAudioFromFirstInteraction, true);
+    }
+
+    async function startInvitationAudio() {
+      if (!invitationAudio.paused) {
+        removeAutoplayFallback();
+        return;
+      }
+
+      try {
+        await invitationAudio.play();
+        removeAutoplayFallback();
+      } catch (_error) {
+        syncAudioButton(false);
+      }
+    }
+
+    function startAudioFromFirstInteraction(event) {
+      if (event.target.closest && event.target.closest("#audioToggle")) return;
+      startInvitationAudio();
+    }
+
+    document.addEventListener("pointerdown", startAudioFromFirstInteraction, true);
+    document.addEventListener("keydown", startAudioFromFirstInteraction, true);
+
     audioToggle.addEventListener("click", async function () {
       if (invitationAudio.paused) {
-        try {
-          await invitationAudio.play();
-        } catch (_error) {
-          syncAudioButton(false);
-        }
+        await startInvitationAudio();
       } else {
         invitationAudio.pause();
       }
@@ -70,6 +94,8 @@
     invitationAudio.addEventListener("play", function () { syncAudioButton(true); });
     invitationAudio.addEventListener("pause", function () { syncAudioButton(false); });
     invitationAudio.addEventListener("ended", function () { syncAudioButton(false); });
+
+    startInvitationAudio();
   }
 
   var modal = document.getElementById("giftModal");
