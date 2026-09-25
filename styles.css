@@ -434,6 +434,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .date-action { left: 22%; top: 66.3%; width: 56%; height: 5.2%; }
 .location-action { left: 22.7%; top: 73.1%; width: 54.7%; height: 5.3%; }
+.ticket-action { left: 16.8%; top: 82.6%; width: 66.4%; height: 5.8%; }
 .bloomkeep-action { left: 28%; top: 80.8%; width: 44%; height: 5.4%; }
 .gift-action { left: 28%; top: 79.5%; width: 44%; height: 5.5%; }
 .music-action { left: 28%; top: 79.2%; width: 44%; height: 5.5%; }
